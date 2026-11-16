@@ -1,7 +1,7 @@
 {
   "breakAd": {
     "gapSec": 60,
-    "freeActivities": 5,
+    "freeActivities": 3,
     "activityEvery": 1,
     "sessionMax": 40,
     "dayMax": 40,
