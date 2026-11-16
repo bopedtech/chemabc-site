@@ -1,0 +1,15 @@
+{
+  "breakAd": {
+    "gapSec": 60,
+    "freeActivities": 5,
+    "activityEvery": 1,
+    "sessionMax": 40,
+    "dayMax": 40,
+    "rewardGapSec": 60,
+    "minRunSec": 20,
+    "sessionFreeSec": 0
+  },
+  "analyticsSampleRate": 1,
+  "contentVersion": 1,
+  "contentUrl": "https://bopedtech.github.io/chemabc-site/content/bank.json"
+}

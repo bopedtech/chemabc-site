@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ChemABC</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;margin:0;padding:2rem 1rem;text-align:center}a{display:block;margin:.75rem 0}</style>
+</head>
+<body>
+<p id="msg">ChemABC</p>
+<!-- Without JS the Play link cannot carry the invite referrer; only the JS path attributes installs. -->
+<noscript>
+<a href="https://play.google.com/store/apps/details?id=com.boped.chemabc">Google Play</a>
+</noscript>
+<script src="redirect.js"></script>
+<script>
+(function () {
+  var R = window.ChemRedirect;
+  var ua = navigator.userAgent || '';
+  var code = (new URLSearchParams(location.search).get('c') || '').toUpperCase();
+  var ids = { android: '', iosUrl: '' };
+  var done = false;
+
+  function rand() {
+    var a = new Uint8Array(16);
+    (window.crypto || {}).getRandomValues ? crypto.getRandomValues(a) : a.forEach(function (_, i) { a[i] = Math.random() * 256; });
+    return Array.prototype.map.call(a, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+  }
+
+  function go() {
+    if (done) return;
+    done = true;
+    var t = R.targetFor(ua, code, ids);
+    if (!t) { done = false; showLinks(); return; }
+    location.replace(t);
+  }
+
+  function showLinks() {
+    if (done) return;
+    done = true;
+    var m = document.getElementById('msg');
+    m.textContent = '';
+    R.fallbackTargets(ua, code, ids).forEach(function (t) {
+      var a = document.createElement('a');
+      a.href = t.href;
+      a.textContent = t.label;
+      m.appendChild(a);
+    });
+  }
+
+  function capture(cfg) {
+    var key = cfg.posthogKey || '';
+    var host = (cfg.posthogHost || '').replace(/\/+$/, '');
+    if (!key || key.indexOf('__') === 0 || !/^https:\/\//.test(host) || !R.isValidCode(code)) return;
+    try {
+      fetch(host + '/capture/', {
+        method: 'POST',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          api_key: key,
+          event: 'invite_opened',
+          distinct_id: rand(),
+          properties: { code: code, platform: R.platformOf(ua), $process_person_profile: false, $geoip_disable: true },
+        }),
+      }).catch(function () {});
+    } catch (e) {}
+  }
+
+  var timer = setTimeout(showLinks, 1500);
+  fetch('../site.config.json', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (cfg) {
+      ids.android = cfg.androidPackage && cfg.androidPackage.indexOf('__') !== 0 ? cfg.androidPackage : '';
+      ids.iosUrl = cfg.iosUrl || '';
+      capture(cfg);
+      clearTimeout(timer);
+      go();
+    })
+    .catch(function () {
+      clearTimeout(timer);
+      showLinks();
+    });
+})();
+</script>
+</body>
+</html>
