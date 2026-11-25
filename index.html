@@ -6,6 +6,9 @@
 <title>ChemABC: game hóa học về hóa trị, công thức, cân bằng phương trình</title>
 <meta name="description" content="Game hóa học miễn phí trên Android, mỗi ván 2 đến 3 phút. Kéo thả để nhớ hóa trị, lập công thức và cân bằng phương trình cùng Bé Bình.">
 <link rel="canonical" href="https://bopedtech.github.io/chemabc-site/">
+<link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/">
+<link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/">
+<link rel="alternate" hreflang="x-default" href="https://bopedtech.github.io/chemabc-site/en/">
 <meta name="theme-color" content="#FCFDFD" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0F1728" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/png" sizes="48x48" href="./static/img/favicon-48.png">
@@ -15,6 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ChemABC">
 <meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:title" content="ChemABC: game hóa học về hóa trị, công thức, cân bằng phương trình">
 <meta property="og:description" content="Game hóa học miễn phí trên Android, mỗi ván 2 đến 3 phút. Kéo thả để nhớ hóa trị, lập công thức và cân bằng phương trình cùng Bé Bình.">
 <meta property="og:url" content="https://bopedtech.github.io/chemabc-site/">
@@ -28,7 +32,7 @@
 <meta name="twitter:description" content="Game hóa học miễn phí trên Android, mỗi ván 2 đến 3 phút. Kéo thả để nhớ hóa trị, lập công thức và cân bằng phương trình cùng Bé Bình.">
 <meta name="twitter:image" content="https://bopedtech.github.io/chemabc-site/static/og/chemabc.png">
 <meta name="twitter:image:alt" content="Bé Bình, chiếc bình tam giác của ChemABC">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"ChemABC","operatingSystem":"Android","applicationCategory":"EducationalApplication","inLanguage":"vi","description":"Game hóa học: kéo thả để học ký hiệu, hóa trị, khối lượng nguyên tử, lập công thức, cân bằng phương trình và oxi hóa khử.","url":"https://bopedtech.github.io/chemabc-site/","installUrl":"https://play.google.com/store/apps/details?id=com.boped.chemabc","image":"https://bopedtech.github.io/chemabc-site/static/img/icon-128.webp","screenshot":["https://bopedtech.github.io/chemabc-site/static/img/screen-home.webp","https://bopedtech.github.io/chemabc-site/static/img/screen-blocks.webp","https://bopedtech.github.io/chemabc-site/static/img/screen-explainer.webp","https://bopedtech.github.io/chemabc-site/static/img/screen-summary.webp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"VND"},"publisher":{"@type":"Organization","name":"Boped","email":"boped.tech@gmail.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"ChemABC","operatingSystem":"Android","applicationCategory":"EducationalApplication","inLanguage":["vi","en"],"description":"Game hóa học: kéo thả để học ký hiệu, hóa trị, khối lượng nguyên tử, lập công thức, cân bằng phương trình và oxi hóa khử.","url":"https://bopedtech.github.io/chemabc-site/","installUrl":"https://play.google.com/store/apps/details?id=com.boped.chemabc","image":"https://bopedtech.github.io/chemabc-site/static/img/icon-128.webp","screenshot":["https://bopedtech.github.io/chemabc-site/static/img/screen-home.webp","https://bopedtech.github.io/chemabc-site/static/img/screen-blocks.webp","https://bopedtech.github.io/chemabc-site/static/img/screen-explainer.webp","https://bopedtech.github.io/chemabc-site/static/img/screen-summary.webp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"VND"},"publisher":{"@type":"Organization","name":"Boped","email":"boped.tech@gmail.com"}}</script>
 <style>
 @font-face { font-family: "Nunito"; font-weight: 800; font-style: normal; font-display: swap; src: url(./static/fonts/nunito-800.woff) format("woff"); }
 @font-face { font-family: "Quicksand"; font-weight: 700; font-style: normal; font-display: swap; src: url(./static/fonts/quicksand-700.woff) format("woff"); }
@@ -100,6 +104,10 @@ sup { top: -.5em; }
 .nav a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; border-radius: 999px; font: 600 15px/1.2 var(--font-body); color: var(--ink); text-decoration: none; white-space: nowrap; }
 .nav a:hover { background: var(--surface-muted); }
 .nav a[aria-current="page"] { background: var(--teal-soft); color: var(--teal-ink); }
+.langsw { margin-left: auto; display: flex; gap: 6px; }
+.langsw a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; border-radius: 12px; border: 2px solid var(--line); color: var(--ink); font: 600 14px/1.2 var(--font-body); text-decoration: none; white-space: nowrap; }
+.langsw a:hover { background: var(--surface-muted); }
+.top .brand + .langsw + .nav { margin-left: 0; }
 @media (max-width: 639px) {
   .nav { width: 100%; flex-wrap: wrap; }
   .nav a { padding: 0 9px; font-size: 14px; min-height: 40px; background: var(--surface-muted); }
@@ -163,7 +171,7 @@ td.z { width: 1%; white-space: nowrap; color: var(--ink-muted); font: 800 15px/1
 td.mass { width: 1%; text-align: right; white-space: nowrap; font: 800 21px/1 var(--font-display); font-variant-numeric: tabular-nums; }
 th.r, td.r { text-align: right; }
 @media (max-width: 359px) {
-  thead th, tbody th, tbody td { padding-left: 10px; padding-right: 10px; }
+  thead th, tbody th, tbody td { padding-left: 8px; padding-right: 8px; }
   .el { gap: 9px; }
   .sym { min-width: 42px; height: 42px; font-size: 17px; }
   .v { min-width: 38px; height: 32px; font-size: 16px; padding: 0 7px; }
@@ -338,6 +346,7 @@ body.share { min-height: 100vh; min-height: 100dvh; display: flex; flex-directio
 <a class="skip" href="#main">Vào nội dung</a>
 <header class="top"><div class="wrap">
 <a class="brand" href="./" aria-current="page"><img src="./static/img/icon-128.webp" width="36" height="36" alt="">ChemABC</a>
+<nav class="langsw" aria-label="Ngôn ngữ"><a href="./en/" hreflang="en" lang="en">English</a></nav>
 <nav class="nav" aria-label="Bảng tra"><a href="./bang-hoa-tri/">Hóa trị</a><a href="./bang-nguyen-tu-khoi/">Nguyên tử khối</a><a href="./can-bang-phuong-trinh-hoa-hoc/">Cân bằng</a></nav>
 </div></header>
 <main id="main"><div class="wrap">

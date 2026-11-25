@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://bopedtech.github.io/chemabc-site/</loc></url>
-  <url><loc>https://bopedtech.github.io/chemabc-site/bang-hoa-tri/</loc></url>
-  <url><loc>https://bopedtech.github.io/chemabc-site/bang-nguyen-tu-khoi/</loc></url>
-  <url><loc>https://bopedtech.github.io/chemabc-site/can-bang-phuong-trinh-hoa-hoc/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://bopedtech.github.io/chemabc-site/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/"/>
+  </url>
+  <url><loc>https://bopedtech.github.io/chemabc-site/bang-hoa-tri/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/bang-hoa-tri/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/valency-table/"/>
+  </url>
+  <url><loc>https://bopedtech.github.io/chemabc-site/bang-nguyen-tu-khoi/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/bang-nguyen-tu-khoi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/atomic-mass-table/"/>
+  </url>
+  <url><loc>https://bopedtech.github.io/chemabc-site/can-bang-phuong-trinh-hoa-hoc/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/can-bang-phuong-trinh-hoa-hoc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/balancing-chemical-equations/"/>
+  </url>
+  <url><loc>https://bopedtech.github.io/chemabc-site/en/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/"/>
+  </url>
+  <url><loc>https://bopedtech.github.io/chemabc-site/en/valency-table/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/bang-hoa-tri/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/valency-table/"/>
+  </url>
+  <url><loc>https://bopedtech.github.io/chemabc-site/en/atomic-mass-table/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/bang-nguyen-tu-khoi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/atomic-mass-table/"/>
+  </url>
+  <url><loc>https://bopedtech.github.io/chemabc-site/en/balancing-chemical-equations/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/can-bang-phuong-trinh-hoa-hoc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/balancing-chemical-equations/"/>
+  </url>
   <url><loc>https://bopedtech.github.io/chemabc-site/privacy/</loc></url>
 </urlset>

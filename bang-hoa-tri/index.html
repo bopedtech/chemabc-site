@@ -6,6 +6,9 @@
 <title>Bảng hóa trị nguyên tố và nhóm nguyên tử hay gặp | ChemABC</title>
 <meta name="description" content="Bảng hóa trị của 25 nguyên tố hay gặp và 12 nhóm nguyên tử như OH, NO₃, SO₄, CO₃, PO₄, NH₄, đúng như bài học trong ChemABC.">
 <link rel="canonical" href="https://bopedtech.github.io/chemabc-site/bang-hoa-tri/">
+<link rel="alternate" hreflang="vi" href="https://bopedtech.github.io/chemabc-site/bang-hoa-tri/">
+<link rel="alternate" hreflang="en" href="https://bopedtech.github.io/chemabc-site/en/valency-table/">
+<link rel="alternate" hreflang="x-default" href="https://bopedtech.github.io/chemabc-site/en/valency-table/">
 <meta name="theme-color" content="#FCFDFD" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0F1728" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/png" sizes="48x48" href="../static/img/favicon-48.png">
@@ -15,6 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ChemABC">
 <meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:title" content="Bảng hóa trị nguyên tố và nhóm nguyên tử hay gặp | ChemABC">
 <meta property="og:description" content="Bảng hóa trị của 25 nguyên tố hay gặp và 12 nhóm nguyên tử như OH, NO₃, SO₄, CO₃, PO₄, NH₄, đúng như bài học trong ChemABC.">
 <meta property="og:url" content="https://bopedtech.github.io/chemabc-site/bang-hoa-tri/">
@@ -99,6 +103,10 @@ sup { top: -.5em; }
 .nav a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; border-radius: 999px; font: 600 15px/1.2 var(--font-body); color: var(--ink); text-decoration: none; white-space: nowrap; }
 .nav a:hover { background: var(--surface-muted); }
 .nav a[aria-current="page"] { background: var(--teal-soft); color: var(--teal-ink); }
+.langsw { margin-left: auto; display: flex; gap: 6px; }
+.langsw a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; border-radius: 12px; border: 2px solid var(--line); color: var(--ink); font: 600 14px/1.2 var(--font-body); text-decoration: none; white-space: nowrap; }
+.langsw a:hover { background: var(--surface-muted); }
+.top .brand + .langsw + .nav { margin-left: 0; }
 @media (max-width: 639px) {
   .nav { width: 100%; flex-wrap: wrap; }
   .nav a { padding: 0 9px; font-size: 14px; min-height: 40px; background: var(--surface-muted); }
@@ -162,7 +170,7 @@ td.z { width: 1%; white-space: nowrap; color: var(--ink-muted); font: 800 15px/1
 td.mass { width: 1%; text-align: right; white-space: nowrap; font: 800 21px/1 var(--font-display); font-variant-numeric: tabular-nums; }
 th.r, td.r { text-align: right; }
 @media (max-width: 359px) {
-  thead th, tbody th, tbody td { padding-left: 10px; padding-right: 10px; }
+  thead th, tbody th, tbody td { padding-left: 8px; padding-right: 8px; }
   .el { gap: 9px; }
   .sym { min-width: 42px; height: 42px; font-size: 17px; }
   .v { min-width: 38px; height: 32px; font-size: 16px; padding: 0 7px; }
@@ -337,6 +345,7 @@ body.share { min-height: 100vh; min-height: 100dvh; display: flex; flex-directio
 <a class="skip" href="#main">Vào nội dung</a>
 <header class="top"><div class="wrap">
 <a class="brand" href="../"><img src="../static/img/icon-128.webp" width="36" height="36" alt="">ChemABC</a>
+<nav class="langsw" aria-label="Ngôn ngữ"><a href="../en/valency-table/" hreflang="en" lang="en">English</a></nav>
 <nav class="nav" aria-label="Bảng tra"><a href="../bang-hoa-tri/" aria-current="page">Hóa trị</a><a href="../bang-nguyen-tu-khoi/">Nguyên tử khối</a><a href="../can-bang-phuong-trinh-hoa-hoc/">Cân bằng</a></nav>
 </div></header>
 <main id="main"><div class="band"><div class="wrap read">
