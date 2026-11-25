@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bopedtech.github.io/chemabc-site/sitemap.xml
